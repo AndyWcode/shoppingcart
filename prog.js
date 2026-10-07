@@ -108,10 +108,16 @@ const games =
         genre: ["single player", "multiplayer", "co-op"]
     },
 
-    {                                                         //12
-        name:"Overwatch",
+    {                                                         //19
+        name:"Unturned",
         price: 0,
-        genre: ["shooter", "multiplayer"]
+        genre: ["survival", "multiplayer"]
+    },
+
+    {                                                         //20
+        name:"No Man's Sky",
+        price: 60,
+        genre: ["open world", "singleplayer"]
     },
 
 
