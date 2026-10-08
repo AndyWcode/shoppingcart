@@ -131,12 +131,12 @@ let cartprice_each = [10, 20, 30]
 
 
 
-function addtocart(){
-    cart.push();
+function addtocart(game){
+    cart.push(game);
 }
 
 
-function checkcart(cart){
+function checkcart(cart, cartprice_each){
     price = 0
     for(let i  = 0; i< cart.length; i++)
     {
