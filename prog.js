@@ -4,6 +4,7 @@ const games =
         name:"Balatro",
         price: 20,
         genre: ["strategy", "indie"]
+        
     },
 
     {                                                       //2
@@ -121,6 +122,32 @@ const games =
     },
 
 ]
+
+
+
+let cart = ["Unturned"]
+let cartprice_each = [10, 20, 30]
+
+
+
+
+function addtocart(){
+    cart.push();
+}
+
+
+function checkcart(cart){
+    price = 0
+    for(let i  = 0; i< cart.length; i++)
+    {
+        console.log(cart[i]+ " : " + cartprice_each[i]);
+    }
+
+    cartprice_each.forEach(s => price += s);
+
+    return price
+}
+
 
 
 
