@@ -125,29 +125,38 @@ const games =
 
 
 
-let cart = ["Unturned"]
-let cartprice_each = [10, 20, 30]
+let Usercart = ["Unturned"]
 
 
 
 
-function addtocart(){
-    cart.push();
+
+function addtocart(cart,item){
+    cart.push(item);
+
 }
 
+function removefromcart(cart, item){
+    cart.splice(cart.indexOf(item), 1)
 
-function checkcart(cart){
-    price = 0
-    for(let i  = 0; i< cart.length; i++)
-    {
-        console.log(cart[i]+ " : " + cartprice_each[i]);
-    }
-
-    cartprice_each.forEach(s => price += s);
-
-    return price
 }
 
+function filterbycat(gamelist, maxprice = 0, genre = "", name =""){
+    for(let i = 0 ; i <gamelist.length; i++)
+        {
+            if(gamelist[i].name === name || gamelist[i].price <= maxprice || gamelist[i].genre === genre)
+                console.log(gamelist[i].name);
+
+        }
+    
 
 
 
+}
+
+filterbycat(games, "20")
+
+
+
+addtocart(Usercart, "Unturned");
+removefromcart(Usercart, "Unturned");
