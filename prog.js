@@ -105,7 +105,7 @@ const games =
 
     {                                                         //18
         name:"NBA 2k27",
-        price: 0,
+        price: 40,
         genre: ["single player", "multiplayer", "co-op"]
     },
 
@@ -125,7 +125,7 @@ const games =
 
 
 
-let Usercart = ["Unturned"]
+let Usercart = ["Unturned", "NBA 2k27"]
 
 
 
@@ -141,20 +141,52 @@ function removefromcart(cart, item){
 
 }
 
-function filterbycat(gamelist, maxprice = 0, genre = "", name =""){
+function filterbymoney(gamelist, maxprice){
     for(let i = 0 ; i <gamelist.length; i++)
         {
-            if(gamelist[i].name === name || gamelist[i].price <= maxprice || gamelist[i].genre === genre)
+            if(gamelist[i].price <= maxprice)
                 console.log(gamelist[i].name);
 
         }
-    
-
-
-
 }
 
-filterbycat(games, "20")
+function filterbygenre(gamelist, genre){
+    for(let i = 0 ; i <gamelist.length; i++)
+        {
+            if(genre in gamelist[i].genre)
+                console.log(gamelist[i].name);
+
+        }
+}
+
+function showcart_andtotal(gamelist, cart){
+    let total = 0
+    for(let i = 0; i < cart.length; i++)
+    {
+        for( let l = 0; l  < gamelist.length; l++)
+        {
+            if(cart[i] == gamelist[l].name)
+            {
+                console.log(cart[i] + " : " + gamelist[l].price + "$")
+                total = total + gamelist[l].price
+            }
+
+        }
+
+
+
+
+    }
+
+    console.log(`your total is ${total}$`)
+}
+
+
+
+showcart_andtotal(games, Usercart);
+
+
+
 
 
 
