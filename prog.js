@@ -153,9 +153,9 @@ function filterbymoney(gamelist, maxprice){
 function filterbygenre(gamelist, genre){
     for(let i = 0 ; i <gamelist.length; i++)
         {
-            if(genre in gamelist[i].genre)
+            if( gamelist[i].genre.includes(genre)){
                 console.log(gamelist[i].name);
-
+            }
         }
 }
 
@@ -167,28 +167,16 @@ function showcart_andtotal(gamelist, cart){
         {
             if(cart[i] == gamelist[l].name)
             {
-                console.log(cart[i] + " : " + gamelist[l].price + "$")
+                console.log(`${cart[i]}:     $${gamelist[l].price}`)
                 total = total + gamelist[l].price
             }
-
         }
-
-
-
-
     }
-
-    console.log(`your total is ${total}$`)
+    console.log("------------------ ")
+    console.log(`YOUR TOTAL :  $${total}`)
 }
 
-
-
-showcart_andtotal(games, Usercart);
-
-
-
-
-
+showcart_andtotal(games, Usercart)
 
 addtocart(Usercart, "Unturned");
 removefromcart(Usercart, "Unturned");
