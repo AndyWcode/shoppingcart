@@ -131,6 +131,10 @@ let Usercart = ["Unturned", "NBA 2k27"]
 
 
 
+
+
+
+
 function addtocart(cart,item){
     cart.push(item);
 
@@ -176,7 +180,27 @@ function showcart_andtotal(gamelist, cart){
     console.log(`YOUR TOTAL :  $${total}`)
 }
 
+
+
+
+
 showcart_andtotal(games, Usercart)
 
 addtocart(Usercart, "Unturned");
 removefromcart(Usercart, "Unturned");
+
+const text  = document.getElementById('games')
+const button = document.getElementById('hemmy')
+button.addEventListener('click', addtocart(Usercart,games[i].name))
+
+for(let i = 0; i <games.length; i++)
+{
+    text.innerHTML += `
+    <span>${games[i].name}</span> -  $<span>${games[i].price}</span>
+    `
+    button.innerHTML +=`
+    <span> BUY </span>
+    <br>
+    `
+
+}
