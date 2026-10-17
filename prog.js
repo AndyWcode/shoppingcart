@@ -137,7 +137,7 @@ let Usercart = ["Unturned", "NBA 2k27"]
 
 function addtocart(cart,item){
     cart.push(item);
-
+    console.log(item);
 }
 
 function removefromcart(cart, item){
@@ -176,31 +176,32 @@ function showcart_andtotal(gamelist, cart){
             }
         }
     }
-    console.log("------------------ ")
-    console.log(`YOUR TOTAL :  $${total}`)
+    
 }
 
+console.log(showcart_andtotal(games, Usercart))
+
+const text  = window.document.getElementById('gamess')
+const checkcartbutton = window.document.getElementById('finalcart')
 
 
+for(let i =0; i < games.length; i++){
+    text.innerHTML +=`
+    <div>
+        <span>${games[i].name}</span> -  $<span>${games[i].price}</span><br>
+        <button onclick="addtocart(Usercart, games[${i}].name)">Purchase</button>
+    
+    </div>
+    `;
+}
 
+for(let i = 0; i <Usercart.length; i++){
 
-showcart_andtotal(games, Usercart)
-
-addtocart(Usercart, "Unturned");
-removefromcart(Usercart, "Unturned");
-
-const text  = document.getElementById('games')
-const button = document.getElementById('hemmy')
-button.addEventListener('click', addtocart(Usercart,games[i].name))
-
-for(let i = 0; i <games.length; i++)
-{
-    text.innerHTML += `
-    <span>${games[i].name}</span> -  $<span>${games[i].price}</span>
+    checkcartbutton.innerHTML +=`
+    
+    
     `
-    button.innerHTML +=`
-    <span> BUY </span>
-    <br>
-    `
+
+
 
 }
