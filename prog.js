@@ -164,22 +164,25 @@ const games =
 const Usercart = {}
 
 function addtocart(cart,item){
-    if(cart[item.name] in cart)
-    {
-        cart[item].quant++;
+   
+        if(games[i].name == item && games[i].stock >0){
+            if(cart[item.name]){
+                cart[item.name].qty += 1;
+                games[i].stock --; 
+            } 
+            else{cart[games[i].name] = games[i];
+            cart[games[i].name].qty = 1;
+            break
+            }
         
+        }
+    
     }
-    else{
-        Usercart[item.name = {
-            name: item.name,
-            price: item.price,
-            genre: item.genre,
-        }]
-    }
-}
+addtocart(Usercart,"No Man's Sky" )
+addtocart(Usercart,"No Man's Sky" )
 
-addtocart(Usercart, "No Man's Sky")
-console.log(Usercart)
+console.log(Usercart);
+
 function removefromcart(cart, item){
     cart.splice(cart.indexOf(item), 1)
 
