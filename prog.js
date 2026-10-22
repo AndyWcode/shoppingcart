@@ -161,30 +161,25 @@ const games =
     }
 ];
 
+
 const Usercart = {}
 
-function addtocart(cart,item){
-   
-        if(games[i].name == item && games[i].stock >0){
-            if(cart[item.name]){
-                cart[item.name].qty += 1;
-                games[i].stock --; 
-            } 
-            else{cart[games[i].name] = games[i];
-            cart[games[i].name].qty = 1;
-            break
-            }
-        
-        }
-    
+function addtocart(item){
+    if(Usercart[item.name]){
+        Usercart[item.name].stock ++
     }
-addtocart(Usercart,"No Man's Sky" )
-addtocart(Usercart,"No Man's Sky" )
+    else{
+        Usercart[item.name] = item
+        Usercart[item.name].stock = 1
+    }
+}
+addtocart(games[0]);
 
-console.log(Usercart);
-
-function removefromcart(cart, item){
-    cart.splice(cart.indexOf(item), 1)
+function removefromcart(item){
+    if(Usercart[item.name].stock > 1){
+        Usercart[item.name].stock --; 
+    }
+    else{delete Usercart[item.name]}
 
 }
 
@@ -206,30 +201,21 @@ function filterbygenre(gamelist, genre){
         }
 }
 
-function showcart_andtotal(gamelist, cart){
+
+function cart_show_total(){
     let total = 0
-    for(let i = 0; i < cart.length; i++)
-    {
-        for( let l = 0; l  < gamelist.length; l++)
-        {
-            if(cart[i] == gamelist[l].name)
-            {
-                console.log(`${cart[i]}:     $${gamelist[l].price}`)
-                total = total + gamelist[l].price
-            }
-        }
+    for(let i in Usercart){
+        console.log(`${Usercart[i].name}: ${Usercart[i].price}`)
     }
-    console.log("------------------ ")
-    console.log(`YOUR TOTAL :  $${total}`)
+    
+    for(let i in Usercart){
+        total += Usercart[i].stock * Usercart[i].price
+    }
+
+    console.log(total);
 }
-
-showcart_andtotal(games, Usercart)
-
-addtocart(Usercart, "Unturned");
-removefromcart(Usercart, "Unturned");
-
-
-const imagess = document.getElementById('images')
+cart_show_total()
+const imagess = window.document.getElementById('images')
 for(let i = 0; i < games.length; i++)
 {
     imagess.innerHTML += 
