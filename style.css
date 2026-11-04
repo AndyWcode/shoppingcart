@@ -1,0 +1,11 @@
+.card{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10px;
+    background-color: blue;
+    
+}
+.box{
+    width: 500px;
+    height: 500px;
+}
