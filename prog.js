@@ -167,18 +167,24 @@ const Usercart = {}
 console.log(games[0].image);
 
 
+function rbg(thing){
 
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    thing.style.borderColor = `rgb(${r}, ${g}, ${b})`;
+}
 
 function inject(item){
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("beforeend",
     `<div class = "card">
-           <h1>item</h1>
-           <img src="${item.image}" alt="${item.name}">
+           <h1>${item.name}</h1>
+           <img  class = "card-img" src="${item.image}" alt="${item.name}">
            <p>yap yap</p>
            <button class = "cBTN">Add to Cart</button>
-    </div> `
-    )
+    </div>`
+    );
 }
 function addtocart(item){
     if(Usercart[item.name]){
@@ -232,4 +238,6 @@ function cart_show_total(){
 // for(let i = 0; i>  games.length, i++;){
 //     inject(games[i]);
 // }
-inject(games[0]);
+for(let i = 0; i<games.length;i++){
+    inject(games[i]);
+}
