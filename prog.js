@@ -212,7 +212,7 @@ function cart_show_total(){
         total += Usercart[i].stock * Usercart[i].price
     }
 
-    console.log(total);
+    return total
 }
 cart_show_total()
 const imagess = window.document.getElementById('images')
