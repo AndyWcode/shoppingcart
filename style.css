@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+
+body{
+    background-color: #00022d;
+}
+
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+    padding: 1rem;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 10px;
+    background-color: #0d56e7;
+    border-width: 2px;
+    border-color: #00abfb;
+    border-style: solid;
+    font-family: "Redaction 50", sans-serif;
+    .card-img{
+        align-items: center;
+    }   
+
+
+    .cBTN{
+    background-color: #2ac8fa;
+    border-radius: 10px;
+    font-family: "Redaction 50", sans-serif;
+    border-color: #00022d;
+    border-width: 1px;
+    width: 10rem;
+    height: 1rem;
+    cursor: pointer;
+    }   
+    .cBTN:active{
+    cursor: crosshair;
+    }
+    
+}

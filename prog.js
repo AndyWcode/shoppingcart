@@ -164,6 +164,22 @@ const games =
 
 const Usercart = {}
 
+console.log(games[0].image);
+
+
+
+
+function inject(item){
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML("beforeend",
+    `<div class = "card">
+           <h1>item</h1>
+           <img src="${item.image}" alt="${item.name}">
+           <p>yap yap</p>
+           <button class = "cBTN">Add to Cart</button>
+    </div> `
+    )
+}
 function addtocart(item){
     if(Usercart[item.name]){
         Usercart[item.name].stock ++
@@ -173,7 +189,6 @@ function addtocart(item){
         Usercart[item.name].stock = 1
     }
 }
-addtocart(games[0]);
 
 function removefromcart(item){
     if(Usercart[item.name].stock > 1){
@@ -214,10 +229,7 @@ function cart_show_total(){
 
     return total
 }
-cart_show_total()
-const imagess = window.document.getElementById('images')
-for(let i = 0; i < games.length; i++)
-{
-    imagess.innerHTML += 
-    `<img src=${games[i].image} width = "300" height = "300">`
-}
+// for(let i = 0; i>  games.length, i++;){
+//     inject(games[i]);
+// }
+inject(games[0]);
