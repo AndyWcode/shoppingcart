@@ -5,7 +5,8 @@ const games =
         price: 20,
         genre: ["strategy", "indie"],
         image: "https://tse1.mm.bing.net/th/id/OIP.3qisZXm1iccgMKkYnccoQgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-        stock: 45
+        stock: 45,
+        description: "A poker-themed roguelike deck-building game focused on playing illegal poker hands and acquiring game-changing jokers."
     },
 
     {                                                        //2
@@ -13,7 +14,8 @@ const games =
         price: 50,
         genre: ["strategy", "simulator"],
         image: "https://tse1.mm.bing.net/th/id/OIP.QkV8vkIH7Cx8qPM_FpqEoQHaEK?r=0&w=1920&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3",
-        stock: 12
+        stock: 12,
+        description: "A comprehensive city-building simulator where players design, manage, and expand road networks, zones, and public services."
     },
 
     {                                                        //3
@@ -21,143 +23,161 @@ const games =
         price: 20,
         genre: ["horror", "indie"],
         image: "https://tse2.mm.bing.net/th/id/OIP.3geBKlvqbLNifotLFFPkYQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-        stock: 85
+        stock: 85,
+        description: "A co-op horror game where players scavenge industrial scrap moons while evading terrifying monsters to meet a corporate quota."
     },
 
-    {                                                       //4
+    {                                                         //4
         name: "Phasmophobia",
         price: 30,
         genre: ["puzzle", "indie", "tactical"],
         image: "https://tse2.mm.bing.net/th/id/OIP.zttTNRT69b3YHm_JYGTpxwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-        stock: 30
+        stock: 30,
+        description: "A psychological ghost-hunting co-op game where investigators use specialized equipment to identify paranormal entities."
     },
 
-    {                                                         //5
+    {                                                        //5
         name: "Microsoft Flight Simulator",
         price: 180,
         genre: ["simulator"],
         image: "https://tse1.mm.bing.net/th/id/OIP.nd6Lubw5l6EoMhitSpcYvAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-        stock: 5
+        stock: 5,
+        description: "An ultra-realistic flight simulation game featuring a globally scaled map powered by real satellite imagery and weather data."
     },
 
-    {                                                         //6
+    {                                                        //6
         name: "DOTA 2",
         price: 0,
         genre: ["strategy", "multiplayer"],
         image: "https://wallpapers.com/images/hd/1920x1080-dota-2-background-8e058ihhfwziqvzo.jpg",
-        stock: 500
+        stock: 500,
+        description: "A classic multiplayer online battle arena (MOBA) game where two teams of five compete to destroy the opposing base's Ancient."
     },
 
-    {                                                         //7
+    {                                                        //7
         name: "CSGO",
         price: 0,
         genre: ["strategy", "multiplayer, shooter"],
-        image: "https://th.bing.com/th/id/OIP.Z03_SblNFXtcK8B5ZM8RDAHaEK?w=324&h=182&c=7&r=0&o=7&pid=1.7&rm=3",
-        stock: 450
+        image: "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2021/07/Counter-Strike-Global-Offensive-(1).jpg",
+        stock: 450,
+        description: "A tactical multiplayer first-person shooter pitting teams of terrorists and counter-terrorists against each other in objective-based rounds."
     },
 
-    {                                                         //8
+    {                                                        //8
         name: "Dead by Daylight",
         price: 7.99,
         genre: ["survival", "horror", "action"],
         image: "https://images4.alphacoders.com/133/1334860.jpeg",
-        stock: 25
+        stock: 25,
+        description: "An asymmetrical multiplayer survival horror game where one ruthless killer hunts down four survivors trying to escape."
     },
 
-    {                                                         //9
+    {                                                        //9
         name: "Red Dead Redemption 2",
         price: 60,
         genre: ["action", "adventure", "open world"],
         image: "https://generacionxbox.com/wp-content/uploads/2022/11/red-dead-redemptio-2-saga.jpg",
-        stock: 18
+        stock: 18,
+        description: "An epic open-world Western adventure following outlaw Arthur Morgan and the Van der Linde gang at the dawn of the modern age."
     },
 
-    {                                                         //10
+    {                                                        //10
         name: "HELLDIVERS",
         price: 35,
         genre: ["co-op shooter", "action"],
-        image: "https://images.wallpapersden.com/image/download/5k-helldivers-2-gaming-poster_bmZram6UmZqaraWkpJRmbmdlrWZlbWU.jpg",
-        stock: 40
+        image: "https://images.wallpapersden.com/image/download/5k-hell-divers-2-gaming-poster_bmZram6UmZqaraWkpJRmbmdlrWZlbWU.jpg",
+        stock: 40,
+        description: "A chaotic co-op shooter focused on fighting galactic alien threats across hostile planets with heavy firepower."
     },
 
-    {                                                         //11
+    {                                                        //11
         name: "Stardew Valley",
         price: 15,
         genre: ["strategy", "indie", "adventure", "simulator"],
         image: "https://wallpapercave.com/wp/wp2234190.jpg",
-        stock: 60
+        stock: 60,
+        description: "A relaxing farming life sim where players cultivate land, raise animals, fish, mine, and befriend local villagers."
     },
 
-    {                                                         //12
+    {                                                        //12
         name: "Overwatch",
         price: 0,
         genre: ["shooter", "multiplayer"],
         image: "https://cdn.wallpapersafari.com/5/34/sDpa8T.jpg",
-        stock: 300
+        stock: 300,
+        description: "A vibrant hero-based team shooter featuring diverse characters with unique roles and abilities."
     },
 
-    {                                                         //13
+    {                                                        //13
         name: "Maple Story 2",
         price: 0,
         genre: ["MMORPG", "multiplayer"],
         image: "https://images5.alphacoders.com/953/thumb-1920-953492.png",
-        stock: 150
+        stock: 150,
+        description: "A 3D block-based MMORPG offering social gameplay, custom housing, exploration, and dungeon crawling."
     },
 
-    {                                                         //14
+    {                                                        //14
         name: "Cyberpunk 2077",
-        price: 0,
+        price: 60,
         genre: ["open world", "action"],
         image: "https://pbs.twimg.com/media/D7P_yLdX4AAvJWO.jpg:large",
-        stock: 22
+        stock: 22,
+        description: "An open-world action RPG set in a dystopian futuristic metropolis centering on a mercenary tangled up in a cybernetic conspiracy."
     },
 
-    {                                                         //15
+    {                                                        //15
         name: "The Elder Scrolls",
         price: 30,
         genre: ["RPG", "fantasy"],
         image: "https://tse1.mm.bing.net/th/id/OIP.5m_h_V0WKt4fqGfSkiH0egHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-        stock: 35
+        stock: 35,
+        description: "A grand fantasy role-playing franchise known for massive open worlds, deep lore, and absolute character freedom."
     },
 
-    {                                                         //16
+    {                                                        //16
         name: "Baldur's Gate 3",
         price: 60,
         genre: ["RPG", "strategy"],
         image: "https://4kwallpapers.com/images/wallpapers/baldurs-gate-3-10k-1920x1080-12703.jpg",
-        stock: 50
+        stock: 50,
+        description: "A critically acclaimed story-driven Dungeons & Dragons RPG featuring tactical turn-based combat and immense narrative choice."
     },
 
-    {                                                         //17
+    {                                                        //17
         name: "Forza Horizon 6",
         price: 70,
         genre: ["Racing", "multiplayer"],
         image: "https://images5.alphacoders.com/140/thumb-1920-1401537.jpg",
-        stock: 14
+        stock: 14,
+        description: "An open-world arcade racing game focused on high-speed exploration, dynamic weather, and diverse car collections."
     },
 
-    {                                                         //18
+    {                                                        //18
         name: "NBA 2k26",
         price: 40,
         genre: ["single player", "multiplayer", "co-op"],
         image: "https://www.gaming.net/wp-content/uploads/2025/09/Your-paragraph-text-2025-09-09T204646.631.jpg",
-        stock: 28
+        stock: 28,
+        description: "A premier basketball simulation game featuring realistic player mechanics, career modes, and online league competitions."
     },
 
-    {                                                         //19
+    {                                                        //19
         name: "Unturned",
         price: 5,
         genre: ["survival", "multiplayer"],
         image: "https://wallpapercave.com/wp/wp1955423.png",
-        stock: 200
+        stock: 200,
+        description: "A sandbox zombie survival game where players scavenge supplies, build bases, and cooperate or fight in open multiplayer servers."
     },
 
-    {                                                         //20
+    {                                                        //20
         name: "No Man's Sky",
         price: 60,
         genre: ["open world", "singleplayer"],
         image: "https://4kwallpapers.com/images/wallpapers/no-mans-sky-2024-1920x1080-17979.jpg",
-        stock: 24
+        stock: 24,
+        description: "A sci-fi exploration game set in a procedurally generated universe featuring space combat, planetary base-building, and discovery."
     }
 ];
 
@@ -181,11 +201,29 @@ function inject(item){
     `<div class = "card">
            <h1>${item.name}</h1>
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
+           <div class ="carddesc">${item.description}</div>
            <p>${item.price}$</p>
            <button class = "cBTN">Add to Cart</button>
     </div>`
     );
 }
+
+.carddesc {
+  display: none;
+  border: 1px solid #000;
+  height: 30px;
+  width: 290px;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
 function addtocart(item){
     if(Usercart[item.name]){
         Usercart[item.name].stock ++

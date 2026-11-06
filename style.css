@@ -7,12 +7,25 @@ body{
     background:#0f123b;
 }
 
+.title{
+    display: flex;
+    font-size: 5rem;
+    color:white;
+    margin-bottom: 5rem;
+    font-family: "Redaction 50", sans-serif;;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+
+
 .heading{
     display: flex;
     flex-wrap: wrap;
     font-family:"Redaction 50", sans-serif;
     font-size: 5rem;
-    color: white;
     height: 100vh;
     background-image: url("https://t3.ftcdn.net/jpg/05/99/72/06/360_F_599720625_N2U8AQzhS5y7llrp2AMAQmKL4B6nWHKT.jpg");
     background-size: cover;
@@ -23,6 +36,8 @@ body{
     text-align: center;
     margin-bottom: 2rem;
     padding: 2rem;
+    color: #D42900 ;
+    
 }   
     
 
@@ -51,25 +66,36 @@ body{
     font-family: "Redaction 50", sans-serif;
     margin: 0;
     font-size: 70%;
-    opacity: .9;
+    color: gold;
     
     .card-img{
         object-fit: contain;
         width: 100%;
         height: 100%;
-        margin: 0px;
+        margin: 2px;
         border: #000000;
         border-width: 6px;
         border-style:solid;
+        margin: 0;
     }   
+    .card-img:hover{
+        cursor: pointer;
+
+
+    }
+
+
+
+
+
     .cBTN{
     background-color: #2ac8fa;
     border-radius: 20px;
     font-family: "Redaction 50", sans-serif;
     border-color: #00022d;
-    border-width: 1px;
+    border-width: 2px;
     width: 10rem;
-    height: 15rem;
+    height: 10rem;
     margin: 0;
 
     cursor: pointer;
