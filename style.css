@@ -4,10 +4,27 @@
 
 
 body{
-    background-color: #00022d;
+    background:#0f123b;
 }
 
-
+.heading{
+    display: flex;
+    flex-wrap: wrap;
+    font-family:"Redaction 50", sans-serif;
+    font-size: 5rem;
+    color: white;
+    height: 100vh;
+    background-image: url("https://t3.ftcdn.net/jpg/05/99/72/06/360_F_599720625_N2U8AQzhS5y7llrp2AMAQmKL4B6nWHKT.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}   
+    
 
 
 .container{
@@ -15,50 +32,46 @@ body{
     
     justify-content:space-between;
     flex-direction: row;
-    gap: 15px;
+    gap: 2.5rem;
     flex-wrap: wrap ;
 }
 .card{
-   
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    height: 20rem;
-    width: 20rem;
+    height: 18.5rem;
+    width: 18.5rem;
     border-radius: 10px;
-    background-color: #0d56e7;
+    background-color: #0b2c6e;
     border-width: 2px;
     border-color: #00abfb;
     border-style: solid;
     font-family: "Redaction 50", sans-serif;
     margin: 0;
     font-size: 70%;
-
+    opacity: .9;
     
     .card-img{
         object-fit: contain;
         width: 100%;
         height: 100%;
         margin: 0px;
-        border: #272da4;
+        border: #000000;
         border-width: 6px;
         border-style:solid;
-
     }   
-    .card h1{
-        font-size: 15rem;
-    }
-
     .cBTN{
     background-color: #2ac8fa;
-    border-radius: 10px;
+    border-radius: 20px;
     font-family: "Redaction 50", sans-serif;
     border-color: #00022d;
     border-width: 1px;
     width: 10rem;
-    height: 1rem;
+    height: 15rem;
+    margin: 0;
+
     cursor: pointer;
     }   
     .cBTN:active{
@@ -66,3 +79,10 @@ body{
     }
     
 }
+
+.card p{
+    font-size: 25px;
+    color: white;
+    margin: 0;
+}
+

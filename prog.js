@@ -181,7 +181,7 @@ function inject(item){
     `<div class = "card">
            <h1>${item.name}</h1>
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
-           <p>yap yap</p>
+           <p>${item.price}$</p>
            <button class = "cBTN">Add to Cart</button>
     </div>`
     );
