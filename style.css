@@ -112,3 +112,6 @@ body{
     margin: 0;
 }
 
+.card:hover{
+    transform: translateY(-8px);
+}

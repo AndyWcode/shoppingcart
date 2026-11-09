@@ -198,7 +198,7 @@ function rbg(thing){
 function inject(item){
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("beforeend",
-    `<div class = "card">
+    `<div class = "card" data-item = "${item.name}">
            <h1>${item.name}</h1>
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
            <div class ="carddesc">${item.description}</div>
@@ -208,25 +208,14 @@ function inject(item){
     );
 }
 
-.carddesc {
-  display: none;
-  border: 1px solid #000;
-  height: 30px;
-  width: 290px;
-  margin-left: 10px;
-}
-
-
-
-
-
-
 
 
 
 function addtocart(item){
+    
     if(Usercart[item.name]){
         Usercart[item.name].stock ++
+        
     }
     else{
         Usercart[item.name] = item
@@ -279,3 +268,10 @@ function cart_show_total(){
 for(let i = 0; i<games.length;i++){
     inject(games[i]);
 }
+
+function test(){
+    console.log(item.target.closest(".card").getAttribute("data-item"))
+    console.log(Usercart);
+}
+const buttons = document.querySelectorAll(".cBTN");
+    buttons.forEach((button) => addEventListener("click", test(event)))

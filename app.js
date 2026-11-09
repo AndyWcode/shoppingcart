@@ -3,7 +3,8 @@ const box = document.querySelector(".box");
 box.style.backgroundColor = "red";
 const header = document.getElementById("color");
 
-const btn = document.getElementById("btn");
+
+const buttons = 
 
 
 // function rgb(){
