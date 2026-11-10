@@ -180,11 +180,8 @@ const games =
         description: "A sci-fi exploration game set in a procedurally generated universe featuring space combat, planetary base-building, and discovery."
     }
 ];
-
-
 const Usercart = {}
 
-console.log(games[0].image);
 
 
 function rbg(thing){
@@ -195,32 +192,34 @@ function rbg(thing){
     thing.style.borderColor = `rgb(${r}, ${g}, ${b})`;
 }
 
-function inject(item){
+function inject(item,ind){
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("beforeend",
-    `<div class = "card" data-item = "${item.name}">
+    `<div class = "card" data-item = ${ind}>
            <h1>${item.name}</h1>
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
            <div class ="carddesc">${item.description}</div>
            <p>${item.price}$</p>
            <button class = "cBTN">Add to Cart</button>
     </div>`
+    
     );
 }
 
 
 
 
-function addtocart(item){
-    
+function addtocart(item, index){
+    if(games[index].stock>1){
     if(Usercart[item.name]){
         Usercart[item.name].stock ++
-        
+        games[index].stock --;
     }
     else{
         Usercart[item.name] = item
         Usercart[item.name].stock = 1
     }
+}
 }
 
 function removefromcart(item){
@@ -265,13 +264,24 @@ function cart_show_total(){
 // for(let i = 0; i>  games.length, i++;){
 //     inject(games[i]);
 // }
+
 for(let i = 0; i<games.length;i++){
-    inject(games[i]);
+    
+    inject(games[i],i);
+    
+
 }
 
-function test(){
-    console.log(item.target.closest(".card").getAttribute("data-item"))
-    console.log(Usercart);
-}
+
 const buttons = document.querySelectorAll(".cBTN");
-    buttons.forEach((button) => addEventListener("click", test(event)))
+    buttons.forEach((button) => addEventListener("click", function(event){
+        let data = event.target.closest(".card").getAttribute("data-item");
+        addtocart(games[data], data);
+        console.log(Usercart)   
+       
+        
+    }
+    )
+)   
+
+    
