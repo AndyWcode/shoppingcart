@@ -1,2 +1,2 @@
-# shoppingcart
+# Andy Shopping Cart Project
 

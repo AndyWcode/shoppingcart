@@ -4,7 +4,7 @@ const games =
         name: "Balatro",
         price: 20,
         genre: ["strategy", "indie"],
-        image: "https://tse1.mm.bing.net/th/id/OIP.3qisZXm1iccgMKkYnccoQgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        image: "img/Balatro.webp",
         stock: 45,
         description: "A poker-themed roguelike deck-building game focused on playing illegal poker hands and acquiring game-changing jokers."
     },
@@ -13,7 +13,7 @@ const games =
         name: "City Skylines",
         price: 50,
         genre: ["strategy", "simulator"],
-        image: "https://tse1.mm.bing.net/th/id/OIP.QkV8vkIH7Cx8qPM_FpqEoQHaEK?r=0&w=1920&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3",
+        image: "img/City Skylines.jpg",
         stock: 12,
         description: "A comprehensive city-building simulator where players design, manage, and expand road networks, zones, and public services."
     },
@@ -22,7 +22,7 @@ const games =
         name: "Lethal Company",
         price: 20,
         genre: ["horror", "indie"],
-        image: "https://tse2.mm.bing.net/th/id/OIP.3geBKlvqbLNifotLFFPkYQHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        image: "img/Lethal Company.webp",
         stock: 85,
         description: "A co-op horror game where players scavenge industrial scrap moons while evading terrifying monsters to meet a corporate quota."
     },
@@ -31,7 +31,7 @@ const games =
         name: "Phasmophobia",
         price: 30,
         genre: ["puzzle", "indie", "tactical"],
-        image: "https://tse2.mm.bing.net/th/id/OIP.zttTNRT69b3YHm_JYGTpxwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        image: "img/Phas.webp",
         stock: 30,
         description: "A psychological ghost-hunting co-op game where investigators use specialized equipment to identify paranormal entities."
     },
@@ -40,7 +40,7 @@ const games =
         name: "Microsoft Flight Simulator",
         price: 180,
         genre: ["simulator"],
-        image: "https://tse1.mm.bing.net/th/id/OIP.nd6Lubw5l6EoMhitSpcYvAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        image: "img/Mflightsim.webp",
         stock: 5,
         description: "An ultra-realistic flight simulation game featuring a globally scaled map powered by real satellite imagery and weather data."
     },
@@ -49,7 +49,7 @@ const games =
         name: "DOTA 2",
         price: 0,
         genre: ["strategy", "multiplayer"],
-        image: "https://wallpapers.com/images/hd/1920x1080-dota-2-background-8e058ihhfwziqvzo.jpg",
+        image: "img/dota2.jpg",
         stock: 500,
         description: "A classic multiplayer online battle arena (MOBA) game where two teams of five compete to destroy the opposing base's Ancient."
     },
@@ -58,7 +58,7 @@ const games =
         name: "CSGO",
         price: 0,
         genre: ["strategy", "multiplayer, shooter"],
-        image: "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2021/07/Counter-Strike-Global-Offensive-(1).jpg",
+        image: "img/csgo.avif",
         stock: 450,
         description: "A tactical multiplayer first-person shooter pitting teams of terrorists and counter-terrorists against each other in objective-based rounds."
     },
@@ -67,7 +67,7 @@ const games =
         name: "Dead by Daylight",
         price: 7.99,
         genre: ["survival", "horror", "action"],
-        image: "https://images4.alphacoders.com/133/1334860.jpeg",
+        image: "img/dbd.jpeg",
         stock: 25,
         description: "An asymmetrical multiplayer survival horror game where one ruthless killer hunts down four survivors trying to escape."
     },
@@ -76,7 +76,7 @@ const games =
         name: "Red Dead Redemption 2",
         price: 60,
         genre: ["action", "adventure", "open world"],
-        image: "https://generacionxbox.com/wp-content/uploads/2022/11/red-dead-redemptio-2-saga.jpg",
+        image: "img/reddead.jpg",
         stock: 18,
         description: "An epic open-world Western adventure following outlaw Arthur Morgan and the Van der Linde gang at the dawn of the modern age."
     },
@@ -85,7 +85,7 @@ const games =
         name: "HELLDIVERS",
         price: 35,
         genre: ["co-op shooter", "action"],
-        image: "https://images.wallpapersden.com/image/download/5k-hell-divers-2-gaming-poster_bmZram6UmZqaraWkpJRmbmdlrWZlbWU.jpg",
+        image: "img/helldiver.jpg",
         stock: 40,
         description: "A chaotic co-op shooter focused on fighting galactic alien threats across hostile planets with heavy firepower."
     },
@@ -94,7 +94,7 @@ const games =
         name: "Stardew Valley",
         price: 15,
         genre: ["strategy", "indie", "adventure", "simulator"],
-        image: "https://wallpapercave.com/wp/wp2234190.jpg",
+        image: "img/stardew.jpg",
         stock: 60,
         description: "A relaxing farming life sim where players cultivate land, raise animals, fish, mine, and befriend local villagers."
     },
@@ -103,7 +103,7 @@ const games =
         name: "Overwatch",
         price: 0,
         genre: ["shooter", "multiplayer"],
-        image: "https://cdn.wallpapersafari.com/5/34/sDpa8T.jpg",
+        image: "img/ow2.webp",
         stock: 300,
         description: "A vibrant hero-based team shooter featuring diverse characters with unique roles and abilities."
     },
@@ -112,7 +112,7 @@ const games =
         name: "Maple Story 2",
         price: 0,
         genre: ["MMORPG", "multiplayer"],
-        image: "https://images5.alphacoders.com/953/thumb-1920-953492.png",
+        image: "img/maplestory.png",
         stock: 150,
         description: "A 3D block-based MMORPG offering social gameplay, custom housing, exploration, and dungeon crawling."
     },
@@ -121,7 +121,7 @@ const games =
         name: "Cyberpunk 2077",
         price: 60,
         genre: ["open world", "action"],
-        image: "https://pbs.twimg.com/media/D7P_yLdX4AAvJWO.jpg:large",
+        image: "img/cyberp.jpg_large",
         stock: 22,
         description: "An open-world action RPG set in a dystopian futuristic metropolis centering on a mercenary tangled up in a cybernetic conspiracy."
     },
@@ -130,7 +130,7 @@ const games =
         name: "The Elder Scrolls",
         price: 30,
         genre: ["RPG", "fantasy"],
-        image: "https://tse1.mm.bing.net/th/id/OIP.5m_h_V0WKt4fqGfSkiH0egHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+        image: "img/elderR.webp",
         stock: 35,
         description: "A grand fantasy role-playing franchise known for massive open worlds, deep lore, and absolute character freedom."
     },
@@ -139,7 +139,7 @@ const games =
         name: "Baldur's Gate 3",
         price: 60,
         genre: ["RPG", "strategy"],
-        image: "https://4kwallpapers.com/images/wallpapers/baldurs-gate-3-10k-1920x1080-12703.jpg",
+        image: "img/bald.jpg",
         stock: 50,
         description: "A critically acclaimed story-driven Dungeons & Dragons RPG featuring tactical turn-based combat and immense narrative choice."
     },
@@ -148,7 +148,7 @@ const games =
         name: "Forza Horizon 6",
         price: 70,
         genre: ["Racing", "multiplayer"],
-        image: "https://images5.alphacoders.com/140/thumb-1920-1401537.jpg",
+        image: "img/forza.jpg",
         stock: 14,
         description: "An open-world arcade racing game focused on high-speed exploration, dynamic weather, and diverse car collections."
     },
@@ -157,7 +157,7 @@ const games =
         name: "NBA 2k26",
         price: 40,
         genre: ["single player", "multiplayer", "co-op"],
-        image: "https://www.gaming.net/wp-content/uploads/2025/09/Your-paragraph-text-2025-09-09T204646.631.jpg",
+        image: "img/nba2k26.jpg",
         stock: 28,
         description: "A premier basketball simulation game featuring realistic player mechanics, career modes, and online league competitions."
     },
@@ -166,7 +166,7 @@ const games =
         name: "Unturned",
         price: 5,
         genre: ["survival", "multiplayer"],
-        image: "https://wallpapercave.com/wp/wp1955423.png",
+        image: "img/unturned.png",
         stock: 200,
         description: "A sandbox zombie survival game where players scavenge supplies, build bases, and cooperate or fight in open multiplayer servers."
     },
@@ -175,7 +175,7 @@ const games =
         name: "No Man's Sky",
         price: 60,
         genre: ["open world", "singleplayer"],
-        image: "https://4kwallpapers.com/images/wallpapers/no-mans-sky-2024-1920x1080-17979.jpg",
+        image: "img/noman.jpg",
         stock: 24,
         description: "A sci-fi exploration game set in a procedurally generated universe featuring space combat, planetary base-building, and discovery."
     }
@@ -208,16 +208,17 @@ function inject(item,ind){
 
 
 
-
 function addtocart(item, index){
-    if(games[index].stock>1){
+    if(games[index].stock>0){
     if(Usercart[item.name]){
-        Usercart[item.name].stock ++
+        Usercart[item.name].stock ++;
         games[index].stock --;
     }
     else{
-        Usercart[item.name] = item
-        Usercart[item.name].stock = 1
+        Usercart[item.name] = {...item};
+        Usercart[item.name].stock = 1;
+        games[index].stock --;
+        
     }
 }
 }
@@ -274,7 +275,7 @@ for(let i = 0; i<games.length;i++){
 
 
 const buttons = document.querySelectorAll(".cBTN");
-    buttons.forEach((button) => addEventListener("click", function(event){
+    buttons.forEach((button) => button.addEventListener("click", function(event){
         let data = event.target.closest(".card").getAttribute("data-item");
         addtocart(games[data], data);
         console.log(Usercart)   

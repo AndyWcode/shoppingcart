@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap');
 
 
-
+body *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     background:#0f123b;
@@ -10,7 +14,7 @@ body{
 .title{
     display: flex;
     font-size: 5rem;
-    color:white;
+    color:rgb(74, 98, 233);
     margin-bottom: 5rem;
     font-family: "Redaction 50", sans-serif;;
     justify-content: center;
@@ -36,7 +40,7 @@ body{
     text-align: center;
     margin-bottom: 2rem;
     padding: 2rem;
-    color: #D42900 ;
+    color: #ffffff ;
     
 }   
     
@@ -44,10 +48,10 @@ body{
 
 .container{
     display: flex;
-    
+
     justify-content:space-between;
     flex-direction: row;
-    gap: 2.5rem;
+    gap: 1.5rem;
     flex-wrap: wrap ;
 }
 .card{
@@ -65,18 +69,18 @@ body{
     border-style: solid;
     font-family: "Redaction 50", sans-serif;
     margin: 0;
-    font-size: 70%;
+    margin-bottom: .2rem;
+    font-size: 1rem;
     color: gold;
     
     .card-img{
-        object-fit: contain;
+        object-fit: cover;
         width: 100%;
         height: 100%;
         margin: 2px;
         border: #000000;
-        border-width: 6px;
+        border-width: 5px;
         border-style:solid;
-        margin: 0;
     }   
     .card-img:hover{
         cursor: pointer;
@@ -94,24 +98,55 @@ body{
     font-family: "Redaction 50", sans-serif;
     border-color: #00022d;
     border-width: 2px;
-    width: 10rem;
-    height: 10rem;
-    margin: 0;
-
+    width: 100%;
+    height: 30%;
+    margin-top:auto;
     cursor: pointer;
     }   
     .cBTN:active{
-    cursor: crosshair;
+    cursor: pointer;
+    background-color:white;
+    transition:background-color .3s ease;
     }
     
 }
 
+
+
+.carddesc{
+    opacity: 0;
+    display: none;
+}
 .card p{
-    font-size: 25px;
+    text-align: center;
+    justify-content: center;
     color: white;
-    margin: 0;
+    margin:0;
 }
 
 .card:hover{
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    background-color:rgb(50, 79, 164);
+    transition: background-color .5s ease, transform .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
 }
+
+.card:hover .carddesc{
+    opacity: 1;
+    display: block;
+
+}
+
+
+
+.card h1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    margin:0;
+    object-fit: contain;
+    font-size: 100%;
+
+}
+
