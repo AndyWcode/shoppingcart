@@ -14,13 +14,15 @@ body{
 .title{
     display: flex;
     font-size: 5rem;
-    color:rgb(74, 98, 233);
+    color:rgb(244, 245, 247);
     margin-bottom: 5rem;
     font-family: "Redaction 50", sans-serif;;
     justify-content: center;
     text-align: center;
     font-weight: 600;
     letter-spacing: 5px;
+    text-shadow: 5px 5px #528197;
+    text-decoration: underline;
 }
 
 
@@ -41,6 +43,7 @@ body{
     margin-bottom: 2rem;
     padding: 2rem;
     color: #ffffff ;
+    text-shadow: 10px 10px #00abfb;
     
 }   
     
@@ -51,7 +54,7 @@ body{
 
     justify-content:space-between;
     flex-direction: row;
-    gap: 1.5rem;
+    gap:1.5rem;
     flex-wrap: wrap ;
 }
 .card{
@@ -60,17 +63,18 @@ body{
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    height: 18.5rem;
+    height: 25rem;
     width: 18.5rem;
     border-radius: 10px;
     background-color: #0b2c6e;
-    border-width: 2px;
+    border-width: 3px;
     border-color: #00abfb;
     border-style: solid;
     font-family: "Redaction 50", sans-serif;
     margin: 0;
-    margin-bottom: .2rem;
-    font-size: 1rem;
+    margin-bottom: 1rem;
+    
+    font-size: 2rem;
     color: gold;
     
     .card-img{
@@ -84,8 +88,6 @@ body{
     }   
     .card-img:hover{
         cursor: pointer;
-
-
     }
 
 
@@ -105,23 +107,26 @@ body{
     }   
     .cBTN:active{
     cursor: pointer;
-    background-color:white;
-    transition:background-color .3s ease;
+    background-color:rgb(245, 242, 242);
+    transition:background-color 1s ease;
     }
-    
+    .cBTN:hover{
+        background-color: #0a88ff;
+        transition: background-color .7s ease;
+    }
 }
-
-
 
 .carddesc{
     opacity: 0;
     display: none;
+    font-size: 50%;
 }
 .card p{
     text-align: center;
     justify-content: center;
-    color: white;
+    color: rgb(255, 230, 89);
     margin:0;
+    
 }
 
 .card:hover{
@@ -137,8 +142,6 @@ body{
 
 }
 
-
-
 .card h1{
     display: flex;
     text-align: center;
@@ -146,7 +149,7 @@ body{
     color: rgb(255, 255, 255);
     margin:0;
     object-fit: contain;
-    font-size: 100%;
+    font-size: 60%;
 
 }
 

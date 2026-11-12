@@ -180,6 +180,20 @@ const games =
         description: "A sci-fi exploration game set in a procedurally generated universe featuring space combat, planetary base-building, and discovery."
     }
 ];
+
+
+
+
+discountCodes = [
+    {
+        code:"ACTION1010",
+        discount: .85,
+    },
+    {
+        code: "CHRISTMAZZ",
+        discount: .70,
+    }
+]
 const Usercart = {}
 
 
@@ -262,9 +276,6 @@ function cart_show_total(){
 
     return total
 }
-// for(let i = 0; i>  games.length, i++;){
-//     inject(games[i]);
-// }
 
 for(let i = 0; i<games.length;i++){
     
@@ -274,13 +285,11 @@ for(let i = 0; i<games.length;i++){
 }
 
 
-const buttons = document.querySelectorAll(".cBTN");
-    buttons.forEach((button) => button.addEventListener("click", function(event){
+const addtocartbuttons = document.querySelectorAll(".cBTN");
+        addtocartbuttons.forEach((button) => button.addEventListener("click", function(event){
         let data = event.target.closest(".card").getAttribute("data-item");
         addtocart(games[data], data);
-        console.log(Usercart)   
-       
-        
+        console.log(Usercart)
     }
     )
 )   
