@@ -8,7 +8,9 @@ body *{
 }
 
 body{
-    background:#0f123b;
+    
+    background-image: linear-gradient(rgba(65,105,225, .6)), url("https://wallpapercave.com/wp/wp2675371.png");
+    background-size: cover;
 }
 
 .title{
@@ -21,19 +23,20 @@ body{
     text-align: center;
     font-weight: 600;
     letter-spacing: 5px;
-    text-shadow: 5px 5px #528197;
+    text-shadow: 2px 2px #528197;
     text-decoration: underline;
 }
 
-
-
+/* // https://www.icegif.com/wp-content/uploads/2025/12/terraria-icegif-7.gif //  */
+/* https://t3.ftcdn.net/jpg/05/99/72/06/360_F_599720625_N2U8AQzhS5y7llrp2AMAQmKL4B6nWHKT.jpg" */
 .heading{
     display: flex;
     flex-wrap: wrap;
     font-family:"Redaction 50", sans-serif;
     font-size: 5rem;
     height: 100vh;
-    background-image: url("https://t3.ftcdn.net/jpg/05/99/72/06/360_F_599720625_N2U8AQzhS5y7llrp2AMAQmKL4B6nWHKT.jpg");
+
+    background-image: url("https://www.icegif.com/wp-content/uploads/2025/12/terraria-icegif-7.gif"); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -95,20 +98,26 @@ body{
 
 
     .cBTN{
-    background-color: #2ac8fa;
-    border-radius: 20px;
+    background-color: white;
+    border-radius: 10px;
     font-family: "Redaction 50", sans-serif;
-    border-color: #00022d;
-    border-width: 2px;
+    border-color: #00abfb;
+    border-width: 3px;
     width: 100%;
     height: 30%;
     margin-top:auto;
     cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+    color:#0a4a85;
+    padding: 0;
     }   
     .cBTN:active{
     cursor: pointer;
     background-color:rgb(245, 242, 242);
     transition:background-color 1s ease;
+    transform: translateX(4px); 
+    transform: translateY(4px);
     }
     .cBTN:hover{
         background-color: #0a88ff;
