@@ -212,8 +212,9 @@ function inject(item,ind){
     `<div class = "card" data-item = ${ind}>
            <h1>${item.name}</h1>
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
-           <div class ="carddesc">${item.description}</div>
-           <p>${item.price}$</p>
+           <div class ="carddesc">${item.description} </div>
+           <p class= "card.stocky">STOCK = ${item.stock}</p>
+           <p>${games[ind].stock}$</p>
            <button class = "cBTN">Add to Cart</button>
     </div>`
     
@@ -223,15 +224,20 @@ function inject(item,ind){
 
 
 function addtocart(item, index){
+    const card1 = document.querySelector(`.card[data-item="${index}"]`);
+    const stockDisplay = card.querySelector(".stocky");
     if(games[index].stock>0){
+        let newstock = games[index].stock
     if(Usercart[item.name]){
         Usercart[item.name].stock ++;
         games[index].stock --;
+        stockDisplay.textContent = card1
     }
     else{
         Usercart[item.name] = {...item};
         Usercart[item.name].stock = 1;
         games[index].stock --;
+        stockDisplay.textContent = card1
         
     }
 }
@@ -277,6 +283,8 @@ function cart_show_total(){
     return total
 }
 
+
+
 for(let i = 0; i<games.length;i++){
     
     inject(games[i],i);
@@ -294,4 +302,3 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
     )
 )   
 
-    
