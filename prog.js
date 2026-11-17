@@ -197,7 +197,6 @@ discountCodes = [
 const Usercart = {}
 
 
-
 function rbg(thing){
 
     let r = Math.floor(Math.random() * 256);
@@ -214,7 +213,7 @@ function inject(item,ind){
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
            <div class ="carddesc">${item.description} </div>
            <p class= "card.stocky">STOCK = ${item.stock}</p>
-           <p>${games[ind].stock}$</p>
+           <p>${item.price}$</p>
            <button class = "cBTN">Add to Cart</button>
     </div>`
     
@@ -224,21 +223,22 @@ function inject(item,ind){
 
 
 function addtocart(item, index){
-    const card1 = document.querySelector(`.card[data-item="${index}"]`);
-    const stockDisplay = card.querySelector(".stocky");
+    const stock = document.querySelector(`[data-item = "${index}"]`)
+
+    
+    
+
     if(games[index].stock>0){
-        let newstock = games[index].stock
     if(Usercart[item.name]){
         Usercart[item.name].stock ++;
         games[index].stock --;
-        stockDisplay.textContent = card1
+    stock.querySelector('p').textContent =`STOCK = ${games[index].stock}`
     }
     else{
         Usercart[item.name] = {...item};
         Usercart[item.name].stock = 1;
         games[index].stock --;
-        stockDisplay.textContent = card1
-        
+        stock.querySelector('p').textContent =`STOCK = ${games[index].stock}`
     }
 }
 }
@@ -293,6 +293,7 @@ for(let i = 0; i<games.length;i++){
 }
 
 
+
 const addtocartbuttons = document.querySelectorAll(".cBTN");
         addtocartbuttons.forEach((button) => button.addEventListener("click", function(event){
         let data = event.target.closest(".card").getAttribute("data-item");
@@ -302,3 +303,8 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
     )
 )   
 
+for(let i = 0; i < Object.keys(Usercart).length; i++){
+    inject(Usercart[i], i)
+
+}
+console.log(Object.keys(Usercart).length)
