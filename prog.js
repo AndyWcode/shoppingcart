@@ -194,7 +194,16 @@ discountCodes = [
         discount: .70,
     }
 ]
-const Usercart = {}
+const Usercart = {
+
+Balatro : { name: "No Man's Sky",
+        price: 60,
+        genre: ["open world", "singleplayer"],
+        image: "img/noman.jpg",
+        stock: 24,
+        description: "A sci-fi exploration game set in a procedurally generated universe featuring space combat, planetary base-building, and discovery."
+        }
+}
 
 
 function rbg(thing){
@@ -270,17 +279,19 @@ function filterbygenre(gamelist, genre){
 }
 
 
-function cart_show_total(){
-    let total = 0
-    for(let i in Usercart){
-        console.log(`${Usercart[i].name}: ${Usercart[i].price}`)
-    }
+function cartinject(item,index){
+    const cartcontainer = document.querySelector(".cartcontainer");
+    cartcontainer.insertAdjacentHTML("beforeend",
+    `<div class = "cartcard" data-item = ${index}>
+           <h1>${item.name}</h1>
+           <img  class = "card-img" src="${item.image}" alt="${item.name}">
+           <div class ="carddesc">${item.description} </div>
+           <p class= "card.stocky">STOCK = ${item.stock}</p>
+           <p>${item.price}$</p>
+           <button class = "cBTN">Add to Cart</button>
+    </div>`
     
-    for(let i in Usercart){
-        total += Usercart[i].stock * Usercart[i].price
-    }
-
-    return total
+    );
 }
 
 
@@ -288,8 +299,6 @@ function cart_show_total(){
 for(let i = 0; i<games.length;i++){
     
     inject(games[i],i);
-    
-
 }
 
 
@@ -299,12 +308,13 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
         let data = event.target.closest(".card").getAttribute("data-item");
         addtocart(games[data], data);
         console.log(Usercart)
+        console.log(Object.keys(Usercart).length)
     }
     )
 )   
-
-for(let i = 0; i < Object.keys(Usercart).length; i++){
-    inject(Usercart[i], i)
-
+let inde =0;
+for (const [key, value] of Object.entries(Usercart)) {
+    cartinject(Usercart[key], inde)
 }
 console.log(Object.keys(Usercart).length)
+console.log(Usercart[0])
