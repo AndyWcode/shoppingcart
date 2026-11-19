@@ -195,14 +195,6 @@ discountCodes = [
     }
 ]
 const Usercart = {
-
-Balatro : { name: "No Man's Sky",
-        price: 60,
-        genre: ["open world", "singleplayer"],
-        image: "img/noman.jpg",
-        stock: 24,
-        description: "A sci-fi exploration game set in a procedurally generated universe featuring space combat, planetary base-building, and discovery."
-        }
 }
 
 
@@ -233,9 +225,6 @@ function inject(item,ind){
 
 function addtocart(item, index){
     const stock = document.querySelector(`[data-item = "${index}"]`)
-
-    
-    
 
     if(games[index].stock>0){
     if(Usercart[item.name]){
@@ -278,20 +267,35 @@ function filterbygenre(gamelist, genre){
         }
 }
 
-
-function cartinject(item,index){
+let cartindex = 0
+function cartinject(index){
     const cartcontainer = document.querySelector(".cartcontainer");
-    cartcontainer.insertAdjacentHTML("beforeend",
-    `<div class = "cartcard" data-item = ${index}>
-           <h1>${item.name}</h1>
-           <img  class = "card-img" src="${item.image}" alt="${item.name}">
-           <div class ="carddesc">${item.description} </div>
-           <p class= "card.stocky">STOCK = ${item.stock}</p>
-           <p>${item.price}$</p>
-           <button class = "cBTN">Add to Cart</button>
-    </div>`
-    
-    );
+    const cardstock = document.querySelector(`[data-item = "${index}"]` )
+    console.log(cardstock);
+    Object.keys(Usercart).forEach(key =>
+    {
+        console.log(Usercart[key])
+        if(Usercart[key]){
+            cardstock.querySelector("p").textContent = Usercart[key].stock +=1;
+
+
+
+
+        }
+        else{
+            cartcontainer.insertAdjacentHTML("beforeend",
+                `<div class = "cartcard" data-item = ${index}>
+                    <h1>${Usercart[key].name}</h1>
+                    <img  class = "card-img" src="${Usercart[key].image}" alt="${Usercart[key].name}">
+                    <div class ="carddesc">${Usercart[key].description} </div>
+                    <p class= "card.stocky">STOCK = ${Usercart[key].stock}</p>
+                    <p>${Usercart[key].price}$</p>
+                </div>`         );
+                cartindex +=1;
+            z}
+    }
+    )       
+
 }
 
 
@@ -307,14 +311,14 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
         addtocartbuttons.forEach((button) => button.addEventListener("click", function(event){
         let data = event.target.closest(".card").getAttribute("data-item");
         addtocart(games[data], data);
-        console.log(Usercart)
-        console.log(Object.keys(Usercart).length)
+        cartinject(cartindex);
     }
     )
 )   
-let inde =0;
-for (const [key, value] of Object.entries(Usercart)) {
-    cartinject(Usercart[key], inde)
+
+
+Object.keys(Usercart).forEach(key =>
+{
+    console.log(Usercart[key])
 }
-console.log(Object.keys(Usercart).length)
-console.log(Usercart[0])
+)
