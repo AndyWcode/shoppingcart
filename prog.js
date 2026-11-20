@@ -239,6 +239,7 @@ function addtocart(item, index){
         stock.querySelector('p').textContent =`STOCK = ${games[index].stock}`
     }
 }
+
 }
 
 function removefromcart(item){
@@ -268,33 +269,24 @@ function filterbygenre(gamelist, genre){
 }
 
 let cartindex = 0
-function cartinject(index){
+function cartinject(dataa, index){
     const cartcontainer = document.querySelector(".cartcontainer");
-    const cardstock = document.querySelector(`[data-item = "${index}"]` )
-    console.log(cardstock);
-    Object.keys(Usercart).forEach(key =>
-    {
-        console.log(Usercart[key])
-        if(Usercart[key]){
-            cardstock.querySelector("p").textContent = Usercart[key].stock +=1;
-
-
-
-
-        }
-        else{
+    const cardstock = document.querySelector(`[data-item = "${dataa}"]` )
+    console.log()
+    let x = Object.keys(Usercart).some(key => Usercart[key].name === games[dataa].name);
+    console.log(x);
+        if(x){
             cartcontainer.insertAdjacentHTML("beforeend",
                 `<div class = "cartcard" data-item = ${index}>
-                    <h1>${Usercart[key].name}</h1>
-                    <img  class = "card-img" src="${Usercart[key].image}" alt="${Usercart[key].name}">
-                    <div class ="carddesc">${Usercart[key].description} </div>
-                    <p class= "card.stocky">STOCK = ${Usercart[key].stock}</p>
-                    <p>${Usercart[key].price}$</p>
+                    <h1>${games[dataa].name}</h1>
+                    <img  class = "card-img" src="${games[dataa].image}" alt="${games[dataa].name}">
+                    <div class ="carddesc">${games[dataa].description} </div>
+                    <p class= "card.stocky">STOCK = ${Usercart[games[dataa].name].stock}</p>
+                    <p>${games[dataa].price}$</p>
                 </div>`         );
                 cartindex +=1;
-            z}
-    }
-    )       
+            }
+              
 
 }
 
@@ -311,14 +303,8 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
         addtocartbuttons.forEach((button) => button.addEventListener("click", function(event){
         let data = event.target.closest(".card").getAttribute("data-item");
         addtocart(games[data], data);
-        cartinject(cartindex);
+        cartinject(data, cartindex);
     }
     )
 )   
 
-
-Object.keys(Usercart).forEach(key =>
-{
-    console.log(Usercart[key])
-}
-)
