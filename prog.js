@@ -242,11 +242,35 @@ function addtocart(item, index){
 
 }
 
-function removefromcart(data){
+function removefromcart(index, gameName){
+    let gameind = 0;
+    const stock1 = document.querySelector(`[data-item = "${index}c"]`)
+    const actstock = document.querySelector(`[data-item = "${index}"]`)
+    console.log(Usercart)
+    games.forEach((game, i) => {
+        if(game.name === gameName){
+            gameind = i;
+        }
     
+    });
+        if(Usercart[gameName].stock > 1){
+        Usercart[gameName].stock --;
+        games[gameind].stock ++;
+        stock1.querySelector('p').textContent =`STOCK = ${Usercart[gameName].stock}`
+        actstock.querySelector('p').textContent = `STOCK = ${games[gameind].stock}`
+            
+        }
+        else if(Usercart[gameName].stock === 1){
+                Usercart[gameName].stock --;
+                games[gameind].stock ++;
+                stock1.remove()
+                delete Usercart[gameName]
+                actstock.querySelector('p').textContent =  `STOCK = ${games[gameind].stock}`
+                
+        }
+       
 
 }
-
 function filterbymoney(gamelist, maxprice){
     for(let i = 0 ; i <gamelist.length; i++)
         {
@@ -272,16 +296,24 @@ function cartinject(dataa){
     
         if(x && Usercart[games[dataa].name].stock == 1){
             cartcontainer.insertAdjacentHTML("beforeend",
-                `<div class = "cartcard" data-item = ${dataa}+c>
+                `<div class = "cartcard" data-item = ${dataa}c>
                     <h1>${games[dataa].name}</h1>
                     <img  class = "card-img" src="${games[dataa].image}" alt="${games[dataa].name}">
                     <p class= "card.stocky">STOCK = 1</p>
                     <p>${games[dataa].price}$</p>
                     <button class = "RBTN">Remove from Cart</button>
                 </div>`         );
+                const removefromcartbuttons = document.querySelectorAll(".RBTN");
+                removefromcartbuttons.forEach((button) => button.addEventListener("click", function(event){
+                let Rdata = event.target.closest(".cartcard").getAttribute("data-item").replace("c", "");
+                let Rdataname = event.target.closest(".cartcard").querySelector("h1").textContent;
+                removefromcart(Rdata,Rdataname);
+        }
+)
+    )
             }
         else{
-            let cardstock = document.querySelector(`[data-item = "${dataa}+c"]` )
+            let cardstock = document.querySelector(`[data-item = "${dataa}c"]` )
             cardstock.querySelector('p').textContent =`STOCK = ${Usercart[games[dataa].name].stock}`
         }
               
@@ -300,16 +332,13 @@ for(let i = 0; i<games.length;i++){
 const addtocartbuttons = document.querySelectorAll(".cBTN");
         addtocartbuttons.forEach((button) => button.addEventListener("click", function(event){
         let data = event.target.closest(".card").getAttribute("data-item");
+        console.log(data);
         addtocart(games[data], data);
         cartinject(data);
         
     }
     )
 )   
-const removefromcartbuttons = document.querySelectorAll(".RBTN");
-    removefromcartbuttons.forEach((button) => button.addEventListener("click", function(event){
-        let Rdata = event.target.closest(".cartcard").getAttribute("data-item");
-        removefromcart(games[Rdata]);
-    }
-)
-    )
+
+
+    
