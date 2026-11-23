@@ -209,7 +209,7 @@ function rbg(thing){
 function inject(item,ind){
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("beforeend",
-    `<div class = "card" data-item = ${ind}>
+    `<div class = "card" data-item = ${ind} data-genre = ${item.genre}>
            <h1>${item.name}</h1>
            <img  class = "card-img" src="${item.image}" alt="${item.name}">
            <div class ="carddesc">${item.description} </div>
@@ -278,16 +278,7 @@ function filterbymoney(gamelist, maxprice){
                 console.log(gamelist[i].name);
 
         }
-}
-
-function filterbygenre(gamelist, genre){
-    for(let i = 0 ; i <gamelist.length; i++)
-        {
-            if( gamelist[i].genre.includes(genre)){
-                console.log(gamelist[i].name);
-            }
-        }
-}
+}  
 function cartinject(dataa){
     const cartcontainer = document.querySelector(".cartcontainer");
     
@@ -320,6 +311,22 @@ function cartinject(dataa){
 
 }
 
+function filterbygenre(x){
+    for(let i = 0; i < games.length; i++){
+        card = document.querySelector(`[data-item = "${i}"]`)
+        if(x in card.getAttribute("data-genre")){
+            console.log(x);
+        }
+    }
+}
+ document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    let x = document.querySelector("#genreSearch");
+    filterbygenre(x);
+    x   = x.value = "";
+ });
+
+
 
 
 for(let i = 0; i<games.length;i++){
@@ -341,4 +348,3 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
 )   
 
 
-    
