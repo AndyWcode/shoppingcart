@@ -212,7 +212,7 @@ function rbg(thing){
 
 function calctotal(carttotal){
     let cart = Object.keys(Usercart)
-    let total = carttotal
+    let total = carttotal;
     cart.forEach((key) =>{
         total += Usercart[key].price * Usercart[key].stock
     })
