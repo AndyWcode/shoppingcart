@@ -194,8 +194,11 @@ discountCodes = [
         discount: .70,
     }
 ]
-const Usercart = {
-}
+const Usercart = {}
+total = 0
+const htmltotal = document.querySelector(".total")
+console.log(htmltotal.querySelector('p'))
+
 
 
 function rbg(thing){
@@ -206,6 +209,16 @@ function rbg(thing){
     thing.style.borderColor = `rgb(${r}, ${g}, ${b})`;
 }
 
+
+function calctotal(carttotal){
+    let cart = Object.keys(Usercart)
+    let total = carttotal
+    cart.forEach((key) =>{
+        total += Usercart[key].price * Usercart[key].stock
+    })
+    console.log(total);
+    htmltotal.querySelector('p').textContent = `${total}`
+}
 function inject(item,ind){
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("beforeend",
@@ -268,7 +281,7 @@ function removefromcart(index, gameName){
                 actstock.querySelector('p').textContent =  `STOCK = ${games[gameind].stock}`
                 
         }
-       
+    calctotal(total);
 
 }
 function filterbymoney(gamelist, maxprice){
@@ -307,24 +320,24 @@ function cartinject(dataa){
             let cardstock = document.querySelector(`[data-item = "${dataa}c"]` )
             cardstock.querySelector('p').textContent =`STOCK = ${Usercart[games[dataa].name].stock}`
         }
-              
-
-}
+        calctotal(total);
+}   
 
 function filterbygenre(x){
+    card = document.querySelectorAll(".card");
+    
     for(let i = 0; i < games.length; i++){
         card = document.querySelector(`[data-item = "${i}"]`)
-        if(x in card.getAttribute("data-genre")){
-            console.log(x);
+        let list = card.getAttribute("data-genre").split(",")
+        if((list.includes(x.value))){
+            card.style.display = "none"
+        }
+        if(x.value === ""){
+            card.style.display = "flex";
         }
     }
 }
- document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    let x = document.querySelector("#genreSearch");
-    filterbygenre(x);
-    x   = x.value = "";
- });
+ 
 
 
 
@@ -347,4 +360,9 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
     )
 )   
 
-
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    let x = document.querySelector("#genreSearch");
+    filterbygenre(x);
+    
+ });

@@ -171,7 +171,6 @@ body{
 
 .cartcontainer{
     display: flex;
-
     justify-content:space-evenly;
     flex-direction: row;
     flex-wrap: wrap ;
@@ -253,4 +252,21 @@ body{
     color: rgb(255, 230, 89);
     margin:0;
     
+}
+
+.total {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  flex-direction: column;
+  background: #0a88ff;
+       
+  width: 5rem;
+  height: 5rem;
+}
+
+.total p {
+    flex-wrap: wrap;    
+  font-size: 2rem; 
+  margin: 0;       
 }
