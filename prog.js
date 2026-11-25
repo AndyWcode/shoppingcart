@@ -195,7 +195,7 @@ discountCodes = [
     }
 ]
 const Usercart = {}
-total = 0
+let total = 0
 const htmltotal = document.querySelector(".total")
 console.log(htmltotal.querySelector('p'))
 
@@ -210,14 +210,29 @@ function rbg(thing){
 }
 
 
+function coupon(inputcode){
+    let discount = 1
+    discountCodes.forEach((workcode) =>{
+        if(workcode.code === inputcode){
+            discount = workcode.discount
+        }
+        else{
+            discount = 1;
+        }
+    })
+    return discount;
+}
+
+
 function calctotal(carttotal){
     let cart = Object.keys(Usercart)
     let total = carttotal;
     cart.forEach((key) =>{
         total += Usercart[key].price * Usercart[key].stock
     })
-    console.log(total);
+
     htmltotal.querySelector('p').textContent = `${total}`
+    return total
 }
 function inject(item,ind){
     const container = document.querySelector(".container");
@@ -360,9 +375,15 @@ const addtocartbuttons = document.querySelectorAll(".cBTN");
     )
 )   
 
-document.querySelector("form").addEventListener("submit", function (event) {
+document.querySelector(".filter").addEventListener("submit", function (event) {
     event.preventDefault();
     let x = document.querySelector("#genreSearch");
     filterbygenre(x);
     
  });
+document.querySelector(".coupon").addEventListener("submit", function(event){
+    event.preventDefault();
+    let x = document.querySelector("#couponcode");
+    total = calctotal(total) * coupon(x.value);
+    
+})
